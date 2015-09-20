@@ -7,7 +7,7 @@ public class DefaultController implements Controller {
 
 	private Map<String, RequestHandler> handlers = new LinkedHashMap<>(); 
 	
-	private RequestHandler getRequestHandler(Request request) {
+	RequestHandler getRequestHandler(Request request) {
 		
 		if (handlers.containsKey(request.getName())) {
 			return handlers.get(request.getName());
