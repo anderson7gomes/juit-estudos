@@ -48,11 +48,55 @@ public class TestDefaultController {
 		
 	} // end testProcess method
 	
+	@Test(expected=ResponseException.class)
+	public void testProcessAnswersResponseException() throws ResponseException {
+		
+		Request request = new SampleRequest("testError");
+		RequestHandler handler = new SampleRequestHandlerException();
+		
+		controller.addRequestHandler(request, handler);
+		
+		controller.process(request);
+	
+	} // end testProcessAnswersResponseException method
+	
+	@Test(expected=NoSuitableRequestHandlerException.class)
+	public void testGetHandlerNotRegistered() {
+		
+		controller.getRequestHandler(new SampleRequest("notRegisteredTest"));
+		
+	} // end testGetHandlerNotRegistered method
+	
+	@Test(expected=RuntimeException.class)
+	public void testAddRequestHandlerAlreadyAdded() {
+		
+		Request request = new SampleRequest();
+		RequestHandler handler = new SampleRequestHandler();
+		
+		controller.addRequestHandler(request, handler);
+		
+	} // end testAddRequestHandlerAlreadyAdded method
+	
 	private class SampleRequest implements Request {
+		
+		private static final String DEFAULT_NAME = "Test";
+		private String name;
+		
+		public SampleRequest(String name) {
+			
+			this.name = name;
+			
+		} // end SampleRequest constructor -- String
+		
+		public SampleRequest() {
+			
+			this(DEFAULT_NAME);
+			
+		} // end SampleRequest constructor
 		
 		public String getName() {
 			
-			return "Test";
+			return name;
 			
 		} // end getName method
 		
@@ -67,6 +111,16 @@ public class TestDefaultController {
 		} // end process method
 		
 	} // end SampleRequestHandler inner class
+	
+	private class SampleRequestHandlerException implements RequestHandler {
+		
+		public Response process(Request request) throws Exception {
+			
+			throw new Exception("exception processing request");
+			
+		}
+		
+	}
 	
 	private class SampleResponse implements Response {
 		
