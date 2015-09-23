@@ -67,6 +67,27 @@ public class TestDefaultController {
 		
 	} // end testGetHandlerNotRegistered method
 	
+	@Test(timeout=200)
+	public void testProcessMultipleRequestsTimeout() throws ResponseException {
+		
+		Request request;
+		RequestHandler handler = new SampleRequestHandler();
+		Response sampleResponse = new SampleResponse();
+		
+		for (int i = 1; i <= 10000; i++) {
+			
+			request = new SampleRequest(String.valueOf(i));
+			controller.addRequestHandler(request, handler);
+			Response response = controller.process(request);
+			
+			assertNotNull("response must be not null", response);
+			assertEquals("Wrong response returned by process",
+					sampleResponse, response);
+			
+		}
+		
+	} // end testProcessMultipleRequestsTimeout method
+	
 	@Test(expected=RuntimeException.class)
 	public void testAddRequestHandlerAlreadyAdded() {
 		
