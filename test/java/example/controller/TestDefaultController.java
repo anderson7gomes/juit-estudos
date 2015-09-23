@@ -2,6 +2,7 @@ package example.controller;
 
 import static org.junit.Assert.*;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class TestDefaultController {
@@ -60,14 +61,8 @@ public class TestDefaultController {
 	
 	} // end testProcessAnswersResponseException method
 	
-	@Test(expected=NoSuitableRequestHandlerException.class)
-	public void testGetHandlerNotRegistered() {
-		
-		controller.getRequestHandler(new SampleRequest("notRegisteredTest"));
-		
-	} // end testGetHandlerNotRegistered method
-	
 	@Test(timeout=200)
+	@Ignore("Teste ignorado devido a não ter um tempo de timeout a testar definido")
 	public void testProcessMultipleRequestsTimeout() throws ResponseException {
 		
 		Request request;
@@ -87,6 +82,13 @@ public class TestDefaultController {
 		}
 		
 	} // end testProcessMultipleRequestsTimeout method
+	
+	@Test(expected=NoSuitableRequestHandlerException.class)
+	public void testGetHandlerNotRegistered() {
+		
+		controller.getRequestHandler(new SampleRequest("notRegisteredTest"));
+		
+	} // end testGetHandlerNotRegistered method
 	
 	@Test(expected=RuntimeException.class)
 	public void testAddRequestHandlerAlreadyAdded() {
