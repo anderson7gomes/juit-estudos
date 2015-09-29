@@ -1,3 +1,5 @@
+package example.others;
+
 public class Employee {
 
 	private String name;

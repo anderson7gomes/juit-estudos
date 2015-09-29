@@ -1,3 +1,5 @@
+package example.others;
+
 import java.util.Arrays;
 
 import org.junit.Test;

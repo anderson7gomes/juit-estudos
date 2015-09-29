@@ -1,3 +1,5 @@
+package example.others;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -6,6 +8,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.hasItem;
 
 import org.junit.Test;
+import org.junit.Ignore;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
@@ -20,6 +23,7 @@ public class HamcrestTest {
 	} // end HamcrestTest constructor
 	
 	@Test
+	@Ignore("Teste não passa de propósito")
 	public void testWithoutHamcrest() {
 		
 		assertTrue(numbers.contains("red")

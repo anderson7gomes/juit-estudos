@@ -1,3 +1,5 @@
+package example.others;
+
 public class Calculator {
 
 	public double add(double n1, double n2) {
