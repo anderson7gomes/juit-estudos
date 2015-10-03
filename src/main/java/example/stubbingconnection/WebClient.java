@@ -31,6 +31,6 @@ public class WebClient {
 			System.err.println("Error while open connection");
 		}
 		
-	} // end main method
+	} // end getContent method
 	
 } // end WebClient class
