@@ -8,5 +8,7 @@
 	<classpathentry kind="lib" path="/home/anderson/Downloads/org.mortbay.jetty.jar"/>
 	<classpathentry kind="lib" path="/home/anderson/Downloads/org.mortbay.jetty.util.jar"/>
 	<classpathentry kind="lib" path="/home/anderson/Downloads/javax.servlet.jar"/>
+	<classpathentry kind="lib" path="/home/anderson/Downloads/javax.ws.rs-api-2.0-m02.jar"/>
+	<classpathentry kind="lib" path="/home/anderson/Downloads/jetty-jndi-9.2.10.v20150310.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

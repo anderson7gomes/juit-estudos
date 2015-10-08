@@ -7,7 +7,7 @@ import java.net.URL;
 
 public class WebClient {
 
-	public void getContent(URL url) {
+	public String getContent(URL url) {
 		
 		StringBuffer content = new StringBuffer(100);
 		
@@ -30,6 +30,8 @@ public class WebClient {
 		} catch (IOException e) {
 			System.err.println("Error while open connection");
 		}
+		
+		return content.toString();
 		
 	} // end getContent method
 	
