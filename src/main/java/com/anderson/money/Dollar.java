@@ -10,10 +10,19 @@ public class Dollar {
 		
 	} // end Dollar constructor -- int
 	
-	public void times(int multiplier) {
+	public Dollar times(int multiplier) {
 		
-		amount *= multiplier;
+		return new Dollar(amount * multiplier);
 		
 	} // end times method
+	
+	@Override
+	public boolean equals(Object o) {
+		
+		Dollar dollar = (Dollar) o;
+		
+		return dollar.amount == this.amount;
+		
+	} // end equals method
 	
 } // end Dollar class
