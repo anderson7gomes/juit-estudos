@@ -16,13 +16,14 @@ public class TestDollar {
 		
 		Dollar product2 = five.times(3);
 		
-		assertTrue("Objeto five foi alterado", 5 == five.amount);
+		assertTrue("Objeto five foi alterado", 
+				new Dollar(5).equals(five));
 		
 		assertEquals("amount de product deve ser igual ao " + 
-				"amount de five vezes 2", 10, product.amount);
+				"amount de five vezes 2", new Dollar(10), product);
 		
 		assertEquals("amount de product2 dever ser igual ao " +
-				"amount de five vezes 3", 15, product2.amount);
+				"amount de five vezes 3", new Dollar(15), product2);
 		
 	} // end testTimes method
 	
