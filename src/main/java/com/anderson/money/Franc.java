@@ -1,8 +1,6 @@
 package com.anderson.money;
 
-public class Franc {
-
-	private int amount;
+public class Franc extends Money {
 	
 	public Franc(int amount) {
 	 	
@@ -15,14 +13,5 @@ public class Franc {
 		return new Franc(amount * multiplier);
 		
 	} // end times method
-	
-	@Override
-	public boolean equals(Object o) {
-		
-		Franc franc = (Franc) o;
-		
-		return franc.amount == this.amount;
-		
-	} // end equals method
 	
 } // end Franc class

@@ -1,8 +1,6 @@
 package com.anderson.money;
 
-public class Dollar {
-
-	private int amount;
+public class Dollar extends Money {
 	
 	public Dollar(int amount) {
 	 	
@@ -15,14 +13,5 @@ public class Dollar {
 		return new Dollar(amount * multiplier);
 		
 	} // end times method
-	
-	@Override
-	public boolean equals(Object o) {
-		
-		Dollar dollar = (Dollar) o;
-		
-		return dollar.amount == this.amount;
-		
-	} // end equals method
 	
 } // end Dollar class
