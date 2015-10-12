@@ -26,6 +26,12 @@ public abstract class Money {
 	
 	public abstract Money times(int multiplier);
 	
+	public String currency() {
+		
+		return currency;
+		
+	} // end currency method
+	
 	@Override
 	public boolean equals(Object o) {
 

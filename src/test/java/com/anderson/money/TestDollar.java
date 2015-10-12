@@ -27,19 +27,4 @@ public class TestDollar {
 		
 	} // end testTimes method
 	
-	@Test
-	public void testEquals() {
-		
-		Money five = Money.dollar(5);
-		
-		assertEquals("Para dois objetos Dollar serem iguais, " + 
-				"ambos têm que ter o mesmo valor amount",
-				Money.dollar(5), five);
-		
-		assertNotEquals("Para dois objetos Dollar serem diferentes, " + 
-				"ambos não podem ter o mesmo valor amount",
-				Money.dollar(6), five);
-		
-	} // end testEquals method
-	
 } // end TestDollar class

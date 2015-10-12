@@ -27,19 +27,4 @@ public class TestFranc {
 		
 	} // end testTimes method
 	
-	@Test
-	public void testEquals() {
-		
-		Money five = Money.franc(5);
-		
-		assertEquals("Para dois objetos Franc serem iguais, " + 
-				"ambos têm que ter o mesmo valor amount",
-				Money.franc(5), five);
-		
-		assertNotEquals("Para dois objetos Franc serem diferentes, " + 
-				"ambos não podem ter o mesmo valor amount",
-				Money.franc(6), five);
-		
-	} // end testEquals method
-	
 } // end TestFranc class
