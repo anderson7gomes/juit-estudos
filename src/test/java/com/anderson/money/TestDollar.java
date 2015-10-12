@@ -10,11 +10,11 @@ public class TestDollar {
 	@Test
 	public void testTimes() {
 		
-		Dollar five = Money.dollar(5);
+		Money five = Money.dollar(5);
 		
-		Dollar product = (Dollar) five.times(2);
+		Money product = five.times(2);
 		
-		Dollar product2 = (Dollar) five.times(3);
+		Money product2 = five.times(3);
 		
 		assertTrue("Objeto five foi alterado", 
 				Money.dollar(5).equals(five));
@@ -30,7 +30,7 @@ public class TestDollar {
 	@Test
 	public void testEquals() {
 		
-		Dollar five = Money.dollar(5);
+		Money five = Money.dollar(5);
 		
 		assertEquals("Para dois objetos Dollar serem iguais, " + 
 				"ambos têm que ter o mesmo valor amount",

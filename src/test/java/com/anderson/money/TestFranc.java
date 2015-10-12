@@ -10,11 +10,11 @@ public class TestFranc {
 	@Test
 	public void testTimes() {
 		
-		Franc five = Money.franc(5);
+		Money five = Money.franc(5);
 		
-		Franc product = (Franc) Money.franc(5).times(2);
+		Money product = Money.franc(5).times(2);
 		
-		Franc product2 = (Franc) Money.franc(5).times(3);
+		Money product2 = Money.franc(5).times(3);
 		
 		assertTrue("Objeto five foi alterado", 
 				Money.franc(5).equals(five));
@@ -30,7 +30,7 @@ public class TestFranc {
 	@Test
 	public void testEquals() {
 		
-		Franc five = Money.franc(5);
+		Money five = Money.franc(5);
 		
 		assertEquals("Para dois objetos Franc serem iguais, " + 
 				"ambos têm que ter o mesmo valor amount",
