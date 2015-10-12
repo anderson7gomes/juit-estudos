@@ -10,33 +10,35 @@ public class TestDollar {
 	@Test
 	public void testTimes() {
 		
-		Dollar product = (Dollar) Money.dollar(5).times(2);
+		Dollar five = Money.dollar(5);
 		
-		Dollar product2 = (Dollar) Money.dollar(5).times(3);
+		Dollar product = (Dollar) five.times(2);
+		
+		Dollar product2 = (Dollar) five.times(3);
 		
 		assertTrue("Objeto five foi alterado", 
-				new Dollar(5).equals(Money.dollar(5)));
+				Money.dollar(5).equals(five));
 		
 		assertEquals("amount de product deve ser igual ao " + 
-				"amount de five vezes 2", new Dollar(10), product);
+				"amount de five vezes 2", Money.dollar(10), product);
 		
 		assertEquals("amount de product2 dever ser igual ao " +
-				"amount de five vezes 3", new Dollar(15), product2);
+				"amount de five vezes 3", Money.dollar(15), product2);
 		
 	} // end testTimes method
 	
 	@Test
 	public void testEquals() {
 		
-		Dollar five = new Dollar(5);
+		Dollar five = Money.dollar(5);
 		
 		assertEquals("Para dois objetos Dollar serem iguais, " + 
 				"ambos têm que ter o mesmo valor amount",
-				new Dollar(5), five);
+				Money.dollar(5), five);
 		
 		assertNotEquals("Para dois objetos Dollar serem diferentes, " + 
 				"ambos não podem ter o mesmo valor amount",
-				new Dollar(6), five);
+				Money.dollar(6), five);
 		
 	} // end testEquals method
 	

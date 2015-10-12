@@ -2,9 +2,9 @@ package com.anderson.money;
 
 public class Dollar extends Money {
 	
-	public Dollar(int amount) {
+	public Dollar(int amount, String currency) {
 	 	
-		this.amount = amount;
+		super(amount, currency);
 		
 	} // end Dollar constructor -- int
 	

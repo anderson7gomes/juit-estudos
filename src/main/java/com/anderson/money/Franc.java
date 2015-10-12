@@ -2,9 +2,9 @@ package com.anderson.money;
 
 public class Franc extends Money {
 	
-	public Franc(int amount) {
+	public Franc(int amount, String currency) {
 	 	
-		this.amount = amount;
+		super(amount, currency);
 		
 	} // end Franc constructor -- int
 	
