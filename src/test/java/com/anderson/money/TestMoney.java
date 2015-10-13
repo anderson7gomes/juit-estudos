@@ -34,6 +34,16 @@ public class TestMoney {
 	} // end testEquals method
 	
 	@Test
+	public void testTimes() {
+		
+		Money dollar = Money.dollar(3);
+		
+		assertEquals(Money.dollar(15), dollar.times(5));
+		assertEquals(Money.dollar(18), dollar.times(6));
+		
+	} // end testTimes method
+	
+	@Test
 	public void testCurrency() {
 		
 		assertEquals("USD", Money.dollar(1).currency());

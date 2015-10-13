@@ -1,6 +1,6 @@
 package com.anderson.money;
 
-public abstract class Money {
+public class Money {
 
 	protected int amount;
 	protected String currency;
@@ -12,19 +12,23 @@ public abstract class Money {
 		
 	} // end Money constructor -- int, String
 	
-	public static Dollar dollar(int amount) {
+	public static Money dollar(int amount) {
 		
-		return new Dollar(amount, "USD");
+		return new Money(amount, "USD");
 		
 	} // end dollar factory method
 	
-	public static Franc franc(int amount) {
+	public static Money franc(int amount) {
 		
-		return new Franc(amount, "CHF");
+		return new Money(amount, "CHF");
 		
 	} // end franc factory method
 	
-	public abstract Money times(int multiplier);
+	public Money times(int multiplier) {
+		
+		return new Money(amount * multiplier, currency);
+		
+	} // end times method
 	
 	public String currency() {
 		
@@ -38,8 +42,15 @@ public abstract class Money {
 		Money money = (Money) o;
 		
 		return money.amount == this.amount
-				&& getClass().equals(money.getClass());
+				&& currency().equals(money.currency());
 		
 	} // end equals method
+	
+	@Override
+	public String toString() {
+		
+		return String.format("%d %s", amount, currency);
+		
+	} // end toString method
 	
 } // end Money class

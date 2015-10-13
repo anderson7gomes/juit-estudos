@@ -8,10 +8,4 @@ public class Franc extends Money {
 		
 	} // end Franc constructor -- int
 	
-	public Money times(int multiplier) {
-		
-		return Money.franc(amount * multiplier);
-		
-	} // end times method
-	
 } // end Franc class
