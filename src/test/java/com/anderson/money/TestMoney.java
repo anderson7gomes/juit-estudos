@@ -12,24 +12,15 @@ public class TestMoney {
 		Money fiveDollars = Money.dollar(5);
 		Money sixFrancs = Money.franc(6);
 		
-		assertEquals("five dollars must be equals an object " + 
-				"Dollar initialized with amount 5", 
-				Money.dollar(5), fiveDollars);
+		assertEquals(Money.dollar(5), fiveDollars);
 		
-		assertEquals("six francs must be equals an object " + 
-				"Franc initialized with amount 6", 
-				Money.franc(6), sixFrancs);
+		assertEquals( Money.franc(6), sixFrancs);
 		
-		assertNotEquals("five dollars must not be equals an object " + 
-				"Dollar initialized with amount 6", 
-				Money.dollar(6), fiveDollars);
+		assertNotEquals(Money.dollar(6), fiveDollars);
 		
-		assertNotEquals("six francs must not be equals an object " + 
-				"Franc initialized with amount 4", 
-				Money.franc(4), sixFrancs);
+		assertNotEquals(Money.franc(4), sixFrancs);
 		
-		assertNotEquals("Dollars must not be equals francs", 
-				Money.franc(5), fiveDollars);
+		assertNotEquals(Money.franc(5), fiveDollars);
 		
 	} // end testEquals method
 	
@@ -50,5 +41,20 @@ public class TestMoney {
 		assertEquals("CHF", Money.franc(1).currency());
 		
 	} // end testCurrency method
+	
+	@Test
+	public void testSimpleAddition() {
+		
+		Money five = Money.dollar(5);
+		
+		Expression sum = five.plus(five);
+		
+		Bank bank = new Bank();
+		
+		Money reduced = bank.reduce(sum, "USD");
+		
+		assertEquals(Money.dollar(10), reduced);
+		
+	} // end testSimpleAddition method
 	
 } // end TestMoney class

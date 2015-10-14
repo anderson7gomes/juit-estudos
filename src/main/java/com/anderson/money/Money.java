@@ -1,6 +1,6 @@
 package com.anderson.money;
 
-public class Money {
+public class Money implements Expression {
 
 	protected int amount;
 	protected String currency;
@@ -29,6 +29,12 @@ public class Money {
 		return new Money(amount * multiplier, currency);
 		
 	} // end times method
+	
+	public Expression plus(Money addend) {
+		
+		return new Money(amount + addend.amount, currency);
+		
+	} // end plus method
 	
 	public String currency() {
 		
