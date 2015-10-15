@@ -57,4 +57,42 @@ public class TestMoney {
 		
 	} // end testSimpleAddition method
 	
+	@Test
+	public void testPlusReturnsSum() {
+		
+		Money five = Money.dollar(5);
+		
+		Expression expression = five.plus(five);
+		
+		Sum sum = (Sum) expression;
+		
+		assertEquals(five, sum.augend);
+		assertEquals(five, sum.addend);
+		
+	} // end testPlusReturnsSum method
+	
+	@Test
+	public void testReduceSum() {
+	
+		Expression sum = new Sum(Money.dollar(4), Money.dollar(3));
+		
+		Bank bank = new Bank();
+		
+		Money result = bank.reduce(sum, "USD");
+		
+		assertEquals(Money.dollar(7), result);
+		
+	} // end testReduceSum method
+	
+	@Test
+	public void testReduceMoney() {
+		
+		Bank bank = new Bank();
+		
+		Money result = bank.reduce(Money.dollar(1), "USD");
+		
+		assertEquals(Money.dollar(1), result);
+		
+	} // end testReduceMoney method
+ 	
 } // end TestMoney class
