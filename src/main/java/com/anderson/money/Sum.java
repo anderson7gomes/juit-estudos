@@ -12,7 +12,7 @@ public class Sum implements Expression {
 		
 	} // end Sum constructor -- int, int
 	
-	public Money reduce(String to) {
+	public Money reduce(Bank bank, String to) {
 		
 		int amount = augend.amount + addend.amount;
 		
